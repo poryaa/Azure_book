@@ -1,0 +1,8 @@
+$schema: https://azuremlschemas.azureedge.net/latest/azureBlob.schema.json
+type: azure_blob                # Required. Datastore type (e.g., azure_file, azure_blob)
+name: agvblob              # Required. Datastore name
+description: My Azure Files datastore for agv    # Optional. Description
+account_name: agvblobstorage  # Required. Azure storage account name
+container_name: agvcontainer
+credentials:                    # Required if not using managed identity
+  sas_token: "se=2026-12-01&sp=racwdl&sv=2022-11-02&sr=c&sig=7p4qqE%2B0EWxccPaCTEnkSMguJamfeWtp3%2BBgaVfMGKg%3D"
