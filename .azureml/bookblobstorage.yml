@@ -1,0 +1,8 @@
+$schema: https://azuremlschemas.azureedge.net/latest/azureBlob.schema.json
+type: azure_blob                # Required. Datastore type (e.g., azure_file, azure_blob)
+name: reviewthebookdatastore              # Required. Datastore name
+description: My Azure Files datastore for book   # Optional. Description
+account_name: reviewthebook  # Required. Azure storage account name
+container_name: bookfiles
+credentials:                    # Required if not using managed identity
+  sas_token: "se=2026-12-01&sp=racwdl&sv=2022-11-02&sr=c&sig=c%2Bv7BFK3r7MYzM3MTDsFDdVr1EBh9eK7o%2BNJEFdudmk%3D"
