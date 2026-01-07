@@ -1,0 +1,56 @@
+<class 'azureml._common.exceptions.AzureMLException'>: AzureMLException:
+	Message: Argument [plot] is of invalid type. Expected type: [matplotlib.pyplot]
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Argument [plot] is of invalid type. Expected type: [matplotlib.pyplot]",
+        "inner_error": {
+            "code": "BadArgument",
+            "inner_error": {
+                "code": "ArgumentInvalid"
+            }
+        }
+    }
+}
+<traceback object at 0x73261c21f4c0>
+Traceback (most recent call last):
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/core/_metrics.py", line 859, in _log_plot
+    plot.savefig(stream, format=ext)
+AttributeError: 'Axes' object has no attribute 'savefig'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_7158/2533882938.py", line 22, in <module>
+    run.log_image(name="Single plot", plot=fig)
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/core/run.py", line 53, in wrapped
+    return func(self, *args, **kwargs)
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/core/run.py", line 2010, in log_image
+    return self._client.log_image(name, path=path, plot=plot, description=description)
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/_run_impl/run_history_facade.py", line 348, in log_image
+    self._log_metric_v2(metric, is_plot=plot is not None)
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/_run_impl/run_history_facade.py", line 367, in _log_metric_v2
+    metric.log_to_artifact(self.artifacts, self._origin,
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/core/_metrics.py", line 848, in log_to_artifact
+    artifact_path = self._log_plot(artifact_client, self.value, origin, container)
+  File "/home/porya/anaconda3/envs/azureml_py310/lib/python3.10/site-packages/azureml/core/_metrics.py", line 868, in _log_plot
+    raise AzureMLException._with_error(azureml_error)
+azureml._common.exceptions.AzureMLException: AzureMLException:
+	Message: Argument [plot] is of invalid type. Expected type: [matplotlib.pyplot]
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Argument [plot] is of invalid type. Expected type: [matplotlib.pyplot]",
+        "inner_error": {
+            "code": "BadArgument",
+            "inner_error": {
+                "code": "ArgumentInvalid"
+            }
+        }
+    }
+}
+
